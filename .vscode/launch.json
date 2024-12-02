@@ -1,0 +1,61 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "npm run dev:inspect",
+      "name": "RunInspect",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "AttachDebugger",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**",
+      ],
+    },
+    {
+      "name": "tsx",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/start.ts",
+      "runtimeExecutable": "tsx",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**",
+      ],
+    },
+    {
+      "command": "npm run test ${file}",
+      "name": "TSX Test File",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "command": "npm run test:inspect ${fileDirname}/${fileBasenameNoExtension}.test.ts",
+      "name": "TSX Inspect Test File",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+  ],
+  "compounds": [
+    {
+      "name": "Debug",
+      "configurations": ["RunInspect", "AttachDebugger"],
+      "stopAll": true
+    },
+    {
+      "name": "Debug Test",
+      "configurations": ["TSX Inspect Test File", "AttachDebugger"],
+      "stopAll": true
+    }
+  ]
+}

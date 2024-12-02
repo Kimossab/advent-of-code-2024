@@ -1,0 +1,32 @@
+{
+  "name": "advent-of-code-2024",
+  "version": "1.0.0",
+  "description": "Advent of Code 2024",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json --resolve-full-paths",
+    "dev": "tsx watch ./src/start.ts",
+    "dev:inspect": "tsx --inspect-brk ./src/start.ts",
+    "test": "tsx --test --experimental-test-module-mocks",
+    "test:inspect": "tsx --test --inspect-brk --experimental-test-module-mocks"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^2.11.0",
+    "@types/node": "^22.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
+    "eslint": "^9.16.0",
+    "eslint-plugin-import-newlines": "^1.4.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.8",
+    "dotenv": "^16.4.5"
+  }
+}
