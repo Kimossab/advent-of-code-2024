@@ -1,21 +1,5 @@
 import { getPuzzleInput } from "../getPuzzleInput";
 
-enum Direction {
-  UP,
-  UP_RIGHT,
-  RIGHT,
-  DOWN_RIGHT,
-  DOWN,
-  DOWN_LEFT,
-  LEFT,
-  UP_LEFT,
-}
-
-interface Coord {
-  x: number;
-  y: number;
-}
-
 const allMatchesRegex = (regex: RegExp, input: string): number => {
   let start = 0;
   let matches = 0;
@@ -49,11 +33,12 @@ export const day4: Problem = async () => {
   const upRight = allMatchesRegex(RegExp(`(s)[xmas\\n]{${length + 1}}(a)[xmas\\n]{${length + 1}}(m)[xmas\\n]{${length + 1}}(x)`, "gi"), input);
 
   part1 += right + left + down + up + downLeft + downRight + upLeft + upRight;
-  const end = performance.now();
 
   part2 += allMatchesRegex(RegExp(`(m).(m)[xmas\\n]{${length - 1}}(a)[xmas\\n]{${length - 1}}(s).(s)`, "gi"), input);
   part2 += allMatchesRegex(RegExp(`(m).(s)[xmas\\n]{${length - 1}}(a)[xmas\\n]{${length - 1}}(m).(s)`, "gi"), input);
   part2 += allMatchesRegex(RegExp(`(s).(s)[xmas\\n]{${length - 1}}(a)[xmas\\n]{${length - 1}}(m).(m)`, "gi"), input);
   part2 += allMatchesRegex(RegExp(`(s).(m)[xmas\\n]{${length - 1}}(a)[xmas\\n]{${length - 1}}(s).(m)`, "gi"), input);
+
+  const end = performance.now();
   return { part1, part2, time: end - start };
 };

@@ -54,10 +54,10 @@ The cache folder is where all the inputs live, if you set up the `.env` file lik
   <p>
     
 ```
-Day 1: Part 1 (3246517) | Part 2 (29379307) | 13.298000000000002ms
-Day 2: Part 1 (341) | Part 2 (404) | 2.341699999999946ms
-Day 3: Part 1 (190604937) | Part 2 (82857512) | 0.862700000000018ms
-Day 4: Part 1 (2530) | Part 2 (1921) | 27.580100000000016ms
+Day 1: Part 1 (3246517) | Part 2 (29379307) | 19.76310000000001ms
+Day 2: Part 1 (341) | Part 2 (404) | 10.715800000000058ms
+Day 3: Part 1 (190604937) | Part 2 (82857512) | 7.269199999999955ms
+Day 4: Part 1 (2530) | Part 2 (1921) | 43.81650000000002ms
 ```
   </p>
 </details>
