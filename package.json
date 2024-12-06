@@ -8,14 +8,16 @@
     "dev": "tsx watch ./src/start.ts",
     "dev:inspect": "tsx --inspect-brk ./src/start.ts",
     "test": "tsx --test --experimental-test-module-mocks",
-    "test:inspect": "tsx --test --inspect-brk --experimental-test-module-mocks"
+    "test:inspect": "tsx --test --inspect-brk --experimental-test-module-mocks",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@stylistic/eslint-plugin": "^2.11.0",
     "@types/node": "^22.10.1",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
     "@typescript-eslint/parser": "^8.16.0",
     "eslint": "^9.16.0",
     "eslint-plugin-import-newlines": "^1.4.0",

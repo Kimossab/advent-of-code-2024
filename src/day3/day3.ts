@@ -29,7 +29,6 @@ export const day3: Problem = async () => {
 
     const mul = !!m.groups?.mul;
     const do_ = !!m.groups?.do;
-    const dont = !!m.groups?.dont;
     const a = Number(m.groups?.a);
     const b = Number(m.groups?.b);
 

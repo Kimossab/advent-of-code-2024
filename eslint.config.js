@@ -6,21 +6,24 @@ import tsEslint from "@typescript-eslint/eslint-plugin";
 import unusedImports from "eslint-plugin-unused-imports";
 
 export default [
-  { ignores: ["build/", "coverage/", "src/**/*.d.ts"] },
-  stylistic.configs["recommended-flat"],
+  { ignores: ["build/"] },
+  {
+    files: ["**/*.ts"],
+    languageOptions: {
+      parser: parserTs,
+    },
+  },
   stylistic.configs.customize({
     semi: true,
     quotes: "double",
   }),
   {
-    files: ["src/**/*.ts", "eslint.config.js"],
     plugins: {
       "import-newlines": importNewLinesPlugin,
       "unused-imports": unusedImports,
-      "@typescript-eslint": tsEslint,
       "sort-imports-es6-autofix": autofix,
+      "@typescript-eslint": tsEslint,
     },
-    languageOptions: { parser: parserTs },
     rules: {
       "import-newlines/enforce": ["error", 2],
       "unused-imports/no-unused-imports": "error",
