@@ -1,6 +1,5 @@
 import { getPuzzleInput } from "../getPuzzleInput";
 
-// Day 6: Part 1 (5242) | Part 2 (0) | 6.644200000000012ms
 enum Direction {
   Up = "^",
   Right = ">",
@@ -133,7 +132,6 @@ export const day6: Problem = async () => {
   const guard = { ...originalGuard };
   let notFound = true;
   while (notFound) {
-    // const map = print(obstacles, visitedPositions, { x: input[0].length, y: input.length })
     switch (guard.direction) {
       case Direction.Up: {
         const obstaclesInTheWay = obstacles.filter(o => o.x === guard.pos.x && o.y < guard.pos.y).map(o => o.y);
