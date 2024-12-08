@@ -111,8 +111,9 @@ export const day6: Problem = async () => {
 
   let part2 = 0;
 
+  const maxX = input[0].length;
   const obstacles: Pos[] = [];
-  const visitedPositions = new Set<string>();
+  const visitedPositions = new Set<number>();
   let originalGuard: Guard = {
     pos: { x: 0, y: 0 },
     direction: Direction.Up,
@@ -141,7 +142,7 @@ export const day6: Problem = async () => {
         const endY = Math.max(...obstaclesInTheWay, -1) + 1;
 
         for (let y = guard.pos.y; y >= endY; y--) {
-          visitedPositions.add(`${guard.pos.x}-${y}`);
+          visitedPositions.add(y * maxX + guard.pos.x);
         }
 
         guard.direction = Direction.Right;
@@ -156,7 +157,7 @@ export const day6: Problem = async () => {
         const endX = Math.min(...obstaclesInTheWay, input[0].length) - 1;
 
         for (let x = guard.pos.x; x <= endX; x++) {
-          visitedPositions.add(`${x}-${guard.pos.y}`);
+          visitedPositions.add(guard.pos.y * maxX + x);
         }
 
         guard.direction = Direction.Down;
@@ -171,7 +172,7 @@ export const day6: Problem = async () => {
         const endY = Math.min(...obstaclesInTheWay, input.length) - 1;
 
         for (let y = guard.pos.y; y <= endY; y++) {
-          visitedPositions.add(`${guard.pos.x}-${y}`);
+          visitedPositions.add(y * maxX + guard.pos.x);
         }
 
         guard.direction = Direction.Left;
@@ -186,7 +187,7 @@ export const day6: Problem = async () => {
         const endX = Math.max(...obstaclesInTheWay, -1) + 1;
 
         for (let x = guard.pos.x; x >= endX; x--) {
-          visitedPositions.add(`${x}-${guard.pos.y}`);
+          visitedPositions.add(guard.pos.y * maxX + x);
         }
         guard.direction = Direction.Up;
         guard.pos = { x: endX, y: guard.pos.y };
@@ -196,7 +197,8 @@ export const day6: Problem = async () => {
   }
 
   for (const position of visitedPositions) {
-    const [x, y] = position.split("-").map(Number);
+    const y = Math.floor(position / maxX);
+    const x = position % maxX;
     if (originalGuard.pos.x === x && originalGuard.pos.y === y) {
       continue;
     }
