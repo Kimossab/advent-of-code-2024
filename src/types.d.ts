@@ -5,3 +5,8 @@ interface ProblemSolution {
 }
 
 type Problem = (...args: any[]) => Promise<ProblemSolution>;
+
+interface Pos {
+  x: number;
+  y: number;
+}
