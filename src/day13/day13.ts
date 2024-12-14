@@ -6,7 +6,7 @@ interface Game {
   buttonBMove: Pos;
 }
 
-const alternative = (game: Game) => {
+const solver = (game: Game) => {
   const ax = BigInt(game.buttonAMove.x);
   const ay = BigInt(game.buttonAMove.y);
   const bx = BigInt(game.buttonBMove.x);
@@ -47,12 +47,12 @@ export const day13: Problem = async () => {
     const { x: bX, y: bY } = /X(?<x>[+-]\d*),\sY(?<y>[+-]\d*)/gm.exec(input[i + 1])?.groups!;
     const { x: pX, y: pY } = /X=(?<x>\d*),\sY=(?<y>\d*)/gm.exec(input[i + 2])?.groups!;
 
-    part1 += alternative({
+    part1 += solver({
       prize: { x: Number(pX), y: Number(pY) },
       buttonAMove: { x: Number(aX), y: Number(aY) },
       buttonBMove: { x: Number(bX), y: Number(bY) },
     });
-    part2 += alternative({
+    part2 += solver({
       prize: { x: Number(pX) + 10000000000000, y: Number(pY) + 10000000000000 },
       buttonAMove: { x: Number(aX), y: Number(aY) },
       buttonBMove: { x: Number(bX), y: Number(bY) },

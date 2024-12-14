@@ -1,4 +1,3 @@
-import autofix from "eslint-plugin-sort-imports-es6-autofix";
 import importNewLinesPlugin from "eslint-plugin-import-newlines";
 import parserTs from "@typescript-eslint/parser";
 import stylistic from "@stylistic/eslint-plugin";
@@ -21,7 +20,6 @@ export default [
     plugins: {
       "import-newlines": importNewLinesPlugin,
       "unused-imports": unusedImports,
-      "sort-imports-es6-autofix": autofix,
       "@typescript-eslint": tsEslint,
     },
     rules: {
@@ -39,7 +37,6 @@ export default [
           ignoreRestSiblings: true,
         },
       ],
-      "sort-imports-es6-autofix/sort-imports-es6": "error",
     },
   },
 ];

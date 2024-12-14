@@ -3,6 +3,7 @@ import { day10 } from "./day10/day10";
 import { day11 } from "./day11/day11";
 import { day12 } from "./day12/day12";
 import { day13 } from "./day13/day13";
+import { day14 } from "./day14/day14";
 import { day2 } from "./day2/day2";
 import { day3 } from "./day3/day3";
 import { day4 } from "./day4/day4";
@@ -26,4 +27,5 @@ export const days: Record<number, { problem: Problem; args?: any[] }> = {
   11: { problem: day11 },
   12: { problem: day12 },
   13: { problem: day13 },
+  14: { problem: day14 },
 };
