@@ -36,7 +36,7 @@ p=9,5 v=-3,-3
 `;
     it("should return 12", async () => {
       getPuzzleInputMock.mock.mockImplementation(async () => input);
-      const result = await day(11, 7);
+      const result = await day(11, 7, true);
 
       assert.equal(result.part1, 12);
     });

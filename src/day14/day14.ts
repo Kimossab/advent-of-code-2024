@@ -66,7 +66,7 @@ const countQuadrant = (robots: number[], size: Pos) => {
   return quadrantCount;
 };
 
-export const day14: Problem = async (width = 101, height = 103) => {
+export const day14: Problem = async (width = 101, height = 103, test = false) => {
   const start = performance.now();
   const input = (await getPuzzleInput(14)).split("\n");
 
@@ -115,7 +115,7 @@ export const day14: Problem = async (width = 101, height = 103) => {
  */
 
   let steps = 1;
-  while (true) {
+  while (!test) {
     const nR = robots.reduce((acc, r) => acc.add(getPosition(r, steps, { x: width, y: height })), new Set<number>());
 
     for (const robot of nR) {
