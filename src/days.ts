@@ -5,6 +5,7 @@ import { day12 } from "./day12/day12";
 import { day13 } from "./day13/day13";
 import { day14 } from "./day14/day14";
 import { day15 } from "./day15/day15";
+import { day16 } from "./day16/day16";
 import { day2 } from "./day2/day2";
 import { day3 } from "./day3/day3";
 import { day4 } from "./day4/day4";
@@ -30,4 +31,5 @@ export const days: Record<number, { problem: Problem; args?: any[] }> = {
   13: { problem: day13 },
   14: { problem: day14 },
   15: { problem: day15 },
+  16: { problem: day16 },
 };
